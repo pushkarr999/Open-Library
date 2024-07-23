@@ -1,0 +1,87 @@
+
+.modal-header {
+    padding: 0px 10px 10px 20px;
+    border-bottom: 2px groove #f3f0f078;
+  }
+
+  .modal{
+    text-align: center; 
+    align-content: center; 
+    padding: 10px 0px !important; 
+    max-height: 500px !important;
+}
+
+.mh{
+    margin: 0px !important; 
+    height: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+    margin-top: 10px;
+   padding-left: 20px;
+   padding-right: 20px;
+}
+
+.text{
+    // margin-top: -10px !important;
+    // margin-bottom: -15px !important;
+    padding: 0px !important;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+  
+
+
+
+.login-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    padding: 5px;
+    flex: 100%;
+    // box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+
+
+.form-container {
+    display: flex;
+    margin-top: 20px;
+  }
+  
+  .left-column {
+    flex: 40%;
+    padding-right: 10px; 
+  }
+  
+  .right-column {
+    flex: 100%;
+    // padding-left: 10px; 
+  }
+  
+  .right-column form {
+    display: flex;
+    flex-direction: column;
+    // gap: 10px;
+  }
+  
+  .right-column form mat-form-field {
+    width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    .form-container {
+      flex-direction: column;
+    }
+  
+    .left-column, .right-column {
+      flex: 100%;
+    }
+  }
+  

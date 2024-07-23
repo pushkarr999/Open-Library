@@ -1,0 +1,29 @@
+<div class="centerDiv">
+  <div class="title" style="font-size: 30px; font-weight: bold">
+    Odoo Library
+  </div>
+  <div class="title">Log In</div>
+  <form class="login-form" [formGroup]="_loginform" (ngSubmit)="onSubmit()">
+    <mat-form-field class="textBox small styleField" appearance="outline">
+      <mat-label>Email / Mobile No.</mat-label>
+      <input matInput type="email" formControlName="email" required />
+    </mat-form-field>
+
+    <mat-form-field
+      class="textBox small styleField"
+      appearance="outline"
+      floatLabel="always"
+    >
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="password" required />
+    </mat-form-field>
+
+    <div>
+      <button class="greenbtn" type="submit">Log In</button>
+    </div>
+
+    <div class="link-container" style="margin-top: 1rem">
+      <a [routerLink]="['']">Don't have an account? Sign Up</a>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,27 @@
+.mat-form-field {
+  width: 100%;
+  max-width: 400px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #e0e6d6; /* Light Sage Green */
+  padding: 20px;
+  color: #4a4a4a; /* Dark Gray */
+  height: 10vh;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.toolbar-contents {
+  margin-top: 1%;
+  display: flex;
+}
+
+.toolbar-buttons {
+  margin-left: 2rem;
+}
+
+.logo {
+  height: 4vh;
+}

@@ -1,0 +1,139 @@
+* {
+  font-family: "Patrick Hand", cursive;
+  --border-color: #212529;
+
+  --textbox-border-color: #adb5bd;
+  --textbox-border-hover-color: #adb5bd;
+  --textbox-border-active-color: #3384cd;
+  --textbox-border-disabled-color: #dee2e6;
+  --textbox-background-hover-color: #f8f9fa;
+  --textbox-placeholder-font-color: #adb5bd;
+  --textbox-font-size: 0.75rem;
+  --textbox-font-weight: 400;
+  --textbox-line-height: 1rem;
+}
+
+.title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-block: 1rem;
+}
+
+.textBox {
+  ::ng-deep .mdc-text-field--outlined {
+    --mdc-outlined-text-field-focus-outline-color: var(
+      --textbox-border-active-color
+    );
+    --mdc-outlined-text-field-outline-color: var(--textbox-border-color);
+    --mdc-outlined-text-field-hover-outline-color: var(
+      --textbox-border-hover-color
+    );
+    --mdc-outlined-text-field-disabled-outline-color: var(
+      --textbox-border-disabled-color
+    );
+  }
+
+  ::ng-deep .mat-mdc-text-field-wrapper:hover {
+    background-color: var(--textbox-background-hover-color);
+  }
+}
+
+.textBox {
+  input {
+    color: #1e1e1e;
+  }
+  input::placeholder {
+    color: var(--textbox-placeholder-font-color);
+  }
+}
+
+.textBox .mat-form-field-outline {
+  border-radius: 25px;
+}
+
+.textBox .mat-form-field-outline-start,
+.textBox .mat-form-field-outline-end {
+  border-radius: 25px;
+}
+
+.redbtn {
+  background-color: #ffcccc;
+  border: 2px solid #ff0000;
+  border-radius: 15px;
+  color: #ff0000;
+  font-family: "Patrick Hand", cursive;
+  font-size: 18px;
+  padding: 10px 20px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+  box-shadow: 2px 2px 0 #ff0000;
+
+  .mat-mdc-raised-button.mat-unthemed {
+    --mdc-protected-button-container-color: #ffcccc;
+  }
+}
+
+.redbtn:hover {
+  background-color: #ffb3b3;
+}
+
+.redbtn:active {
+  box-shadow: none;
+  transform: translate(2px, 2px);
+}
+
+.greenbtn {
+  background-color: #fff;
+  border: 2px solid #2f9e44;
+  border-radius: 15px;
+  color: #45ac58;
+  font-family: "Patrick Hand", cursive;
+  font-size: 18px;
+  padding: 10px 20px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+  box-shadow: 2px 2px 0 #2f9e44;
+
+  .mat-mdc-raised-button.mat-unthemed {
+    --mdc-protected-button-container-color: #ffcccc;
+  }
+}
+
+.greenbtn:hover {
+  background-color: #b2f2bb;
+}
+
+.greenbtn:active {
+  box-shadow: none;
+  transform: translate(2px, 2px);
+}
+
+.bluebtn {
+  background-color: #fff;
+  border: 2px solid #2277c5;
+  border-radius: 15px;
+  color: #2f81cb;
+  font-family: "Patrick Hand", cursive;
+  font-size: 18px;
+  padding: 10px 20px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+  box-shadow: 2px 2px 0 #2277c5;
+
+  .mat-mdc-raised-button.mat-unthemed {
+    --mdc-protected-button-container-color: #ffcccc;
+  }
+}
+
+.bluebtn:hover {
+  background-color: #a5d8ff;
+}
+
+.bluebtn:active {
+  box-shadow: none;
+  transform: translate(2px, 2px);
+}

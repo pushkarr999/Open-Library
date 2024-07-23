@@ -1,0 +1,32 @@
+/* styles.css */
+
+.centerDiv {
+  height: 100%;
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.role-selection {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.link-container a {
+  color: #3f51b5;
+  text-decoration: none;
+}
+
+.styleField {
+  width: 80%;
+  margin-block: 1rem;
+}

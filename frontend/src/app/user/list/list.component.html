@@ -1,0 +1,47 @@
+<app-header></app-header>
+<div class="listContainer">
+  <div class="header">
+    <h1 class="headerClass">Search the books available in Library</h1>
+    <div class="search-container">
+      <input matInput type="text" [(ngModel)]="searchQuery" />
+      <button class="bluebtn small" (click)="onSearch()">Search</button>
+    </div>
+  </div>
+
+  <div style="display: flex">
+    <div class="book-section" style="height: 75vh; overflow-y: auto">
+      <div class="book-item" *ngFor="let book of books">
+        <img
+          [src]="book.image[0]"
+          alt="book cover"
+          style="
+            height: 150px;
+            width: 120px;
+            background-repeat: no-repeat;
+            background-size: contain;
+          "
+        />
+        <div class="book-info">
+          <div class="bookTitle">
+            <h3>{{ book.title }}</h3>
+            <button
+              *ngIf="book.quantity > 0"
+              class="greenbtn small"
+              (click)="bookBook(book)"
+            >
+              Book Now
+            </button>
+            <label *ngIf="book.quantity == 0">Sold Out</label>
+          </div>
+
+          <div style="max-width: 800px; word-wrap: break-word">
+            <p>{{ book.author }} - {{ book.published_year }}</p>
+            <small class="descText">{{ book.description }}</small
+            ><br />
+            <p>In Stock: {{ book.quantity }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

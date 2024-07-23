@@ -1,0 +1,92 @@
+<app-header></app-header>
+<div class="profileContainer">
+  <div class="userTabs">
+    <mat-tab-group>
+      <mat-tab label="Borrowed">
+        <div style="display: flex">
+          <div class="book-section">
+            <div class="book-item" *ngFor="let book of borrowedBooks">
+              <img
+                [src]="
+                  'https://tse2.mm.bing.net/th?id=OIP.SlOEDd4qG_pradkmBlFPxwHaE7&pid=Api&P=0&h=220'
+                "
+                alt="book cover"
+                style="
+                  height: 150px;
+                  width: 120px;
+                  background-repeat: no-repeat;
+                  background-size: contain;
+                "
+              />
+              <div class="book-info">
+                <div class="bookTitle">
+                  <h3>{{ book.books_id.title }}</h3>
+                  <button class="redbtn small" (click)="returnBook(book)">
+                    Return
+                  </button>
+                </div>
+
+                <div style="max-width: 800px; word-wrap: break-word">
+                  <p>
+                    {{ book.books_id.author }} -
+                    {{ book.books_id.published_year }}
+                  </p>
+                  <small class="descText">{{ book.books_id.description }}</small
+                  ><br />
+                  <p>Overdue Amount: {{ book.overdue_amt }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="borrowedBooks.length == 0">No Books borrowed</div>
+      </mat-tab>
+      <mat-tab label="Returned">
+        <div style="display: flex">
+          <div class="book-section">
+            <div class="book-item" *ngFor="let book of returnedBooks">
+              <img
+                [src]="
+                  'https://tse2.mm.bing.net/th?id=OIP.SlOEDd4qG_pradkmBlFPxwHaE7&pid=Api&P=0&h=220'
+                "
+                alt="book cover"
+                style="
+                  height: 150px;
+                  width: 120px;
+                  background-repeat: no-repeat;
+                  background-size: contain;
+                "
+              />
+              <div class="book-info">
+                <div class="bookTitle">
+                  <h3>{{ book.books_id.title }}</h3>
+                </div>
+
+                <div style="max-width: 800px; word-wrap: break-word">
+                  <p>
+                    {{ book.books_id.author }} -
+                    {{ book.books_id.published_year }}
+                  </p>
+                  <small class="descText">{{ book.books_id.description }}</small
+                  ><br />
+                </div>
+              </div>
+            </div>
+            <div *ngIf="returnedBooks.length == 0">No Books to return</div>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+
+  <div class="userDetails">
+    <div style="margin-left: 1rem">Name: {{ username }}</div>
+    <button
+      style="margin: 1rem"
+      class="greenbtn small"
+      (click)="changePassword()"
+    >
+      Change Password
+    </button>
+  </div>
+</div>

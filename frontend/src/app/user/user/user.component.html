@@ -1,0 +1,63 @@
+<app-header></app-header>
+
+<div class="addBtn">
+  <button
+    class="greenbtn"
+    *ngIf="role == '1' || role == '0'"
+    (click)="addBooks()"
+  >
+    Add Book
+  </button>
+</div>
+
+<div class="header">
+  <div style="font-size: 35px; font-size: bold; margin-top: 10px">
+    About the library
+  </div>
+  <div class="search-container">
+    Odoo library of books is a vast repository of knowledge, offering access to
+    a diverse range of literature, academic texts, and reference materials. It
+    provides a space for reading, research, and discovery, enabling individuals
+    to explore different subjects and ideas. Libraries play a crucial role in
+    education and lifelong learning, making information accessible to all
+    members of the community.
+  </div>
+</div>
+
+<div style="display: flex; justify-content: space-around">
+  <div class="book-section">
+    <h2>New Arrivals</h2>
+    <div class="book-item" *ngFor="let book of newArrivals">
+      <img
+        [src]="book.image[0]"
+        alt="book cover"
+        style="
+          height: 150px;
+          width: 120px;
+          background-repeat: no-repeat;
+          background-size: contain;
+        "
+      />
+      <div class="book-info">
+        <h3>{{ book.title }}</h3>
+        <div style="max-width: 300px; word-wrap: break-word">
+          <p>{{ book.author }} - {{ book.published_year }}</p>
+          <small class="descText">{{ book.description }}</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="book-section" style="height: 75vh; overflow-y: auto">
+    <h2>Recommended Books</h2>
+    <div class="book-item" *ngFor="let book of recommendedBooks">
+      <img [src]="book.image" alt="book cover" />
+      <div class="book-info">
+        <h3>{{ book.title }}</h3>
+        <p>{{ book.author }} - {{ book.published_year }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button (click)="addBooks()"></button>

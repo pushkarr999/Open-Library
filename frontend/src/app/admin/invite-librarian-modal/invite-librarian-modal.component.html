@@ -1,0 +1,70 @@
+<div class="centerDiv">
+  <div class="title">Invite</div>
+  <form class="login-form" [formGroup]="_signinform" (ngSubmit)="onSubmit()">
+    <mat-form-field class="textBox small styleField" appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput type="text" formControlName="name" required />
+    </mat-form-field>
+
+    <mat-form-field class="textBox small styleField" appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" formControlName="email" required />
+    </mat-form-field>
+
+    <mat-form-field class="textBox small styleField" appearance="outline">
+      <mat-label>Country code</mat-label>
+      <!-- <input matInput type="tel" formControlName="ph_no" required > -->
+      <mat-select formControlName="countrycode" required>
+        <!-- [(value)]="selected" -->
+        <mat-select-trigger class="p-l-5">
+          {{ getSelectedCountry() }}
+        </mat-select-trigger>
+        <mat-option>--</mat-option>
+        <mat-option
+          *ngFor="let country of countrylist"
+          [value]="country.dialCode"
+        >
+          +{{ country.dialCode }} - {{ country.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="textBox small styleField" appearance="outline">
+      <mat-label>Mobile No.</mat-label>
+      <input matInput type="tel" formControlName="ph_no" required />
+    </mat-form-field>
+
+    <mat-form-field class="textBox small styleField" appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="password" required />
+    </mat-form-field>
+    <div
+      *ngIf="
+        _signinform.controls['password'].invalid &&
+        _signinform.controls['password'].touched
+      "
+    >
+      <mat-error
+        *ngIf="
+          _signinform.controls['password'].invalid &&
+          _signinform.controls['password'].touched
+        "
+      >
+        <ul>
+          <li>
+            Password must be at least 8 characters and cannot exceed 16
+            characters.
+          </li>
+          <li>
+            Password must contain at least 1 number, 1 uppercase letter, 1
+            lowercase letter, and 1 special character.
+          </li>
+        </ul>
+      </mat-error>
+    </div>
+
+    <div>
+      <button class="greenbtn" type="submit">Invite</button>
+    </div>
+  </form>
+</div>

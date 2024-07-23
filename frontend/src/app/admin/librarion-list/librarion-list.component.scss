@@ -1,0 +1,54 @@
+.hand-drawn-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+.hand-drawn-table th,
+.hand-drawn-table td {
+  border: 2px solid black;
+  padding: 10px;
+  text-align: left;
+  position: relative;
+  white-space: nowrap;
+}
+.hand-drawn-table th::after,
+.hand-drawn-table td::after {
+  content: "";
+  position: absolute;
+  border: 1px solid black;
+}
+.hand-drawn-table th::after {
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+}
+.hand-drawn-table td::after {
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+}
+.hand-drawn-table th {
+  background-color: #fff;
+}
+.hand-drawn-table .highlight-orange {
+  background-color: #ffcc99;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+.hand-drawn-table .highlight-green {
+  background-color: #99ff99;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+.containerDiv {
+  width: 80vw;
+}
+
+.arrangeButton {
+  display: flex;
+  column-gap: 2rem;
+  margin-block: 2rem;
+}

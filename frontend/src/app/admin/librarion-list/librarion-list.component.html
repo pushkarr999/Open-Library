@@ -1,0 +1,33 @@
+<app-header></app-header>
+<div class="containerDiv">
+  <div class="arrangeButton">
+    <div>
+      <button class="bluebtn" (click)="inviteModal(1)">Invite Librarian</button>
+    </div>
+    <div>
+      <button class="bluebtn" (click)="inviteModal(0)">Invite Admin</button>
+    </div>
+  </div>
+
+  <table class="hand-drawn-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Contact Number</th>
+        <th>Role</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let user of data">
+      <tr>
+        <td>{{ user.name }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.mobile_no }}</td>
+        <td>
+          <span *ngIf="user.role == 1" class="highlight-green">Librarian</span>
+          <span *ngIf="user.role == 0" class="highlight-orange">Admin</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

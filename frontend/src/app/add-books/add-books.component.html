@@ -1,0 +1,79 @@
+<mat-card style="margin: 0px !important; height: 100%">
+    <mat-card-content
+      style="
+        text-align: center;
+        align-content: center;
+        padding: 10px 0px !important;
+      "
+    >
+      <div
+        style="display: flex; justify-content: space-between"
+        class="m-b-10 modal-header"
+      >
+        <span style="margin-top: 15px; font-size: 20px">
+          <strong>Add Book</strong>
+        </span>
+        <span>
+          <button mat-icon-button [mat-dialog-close]>
+            <mat-icon size="20">clear</mat-icon>
+          </button>
+        </span>
+      </div>
+
+      
+
+
+
+      <div style="display: flex; justify-content: center;">
+        <form [formGroup]="_addform" style="width: 400px;">
+          
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px; "  *ngIf="book_found == false">
+            <mat-form-field style="width:180px">
+              <mat-label>ISBN</mat-label>
+              <input matInput type="text" formControlName="isbn" required />
+            </mat-form-field>
+      
+            <button mat-raised-button type="button" style="margin-bottom: 10px;" (click)="findISBN()">Find</button>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px; " *ngIf="book_found == true">
+            <mat-form-field style="width:180px">
+              <mat-label>ISBN</mat-label>
+              <input matInput type="text" formControlName="isbn" required />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" style="width:180px">
+              <mat-label>Genre</mat-label>
+              <mat-select formControlName="type" required>
+                <mat-select-trigger class="p-l-5">
+                  {{ getSelectedTypeName() }}
+                </mat-select-trigger>
+                <mat-option *ngFor="let type of book_types" [value]="type.value">
+                  {{ type.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+      
+        </form>
+      </div>
+      
+  
+      <div
+        fxLayout="row"
+        fxLayoutAlign="center bottom"
+        fxLayoutGap="30px"
+        style="margin-top: 15px"
+        *ngIf="book_found == true"
+      >
+        <button
+          mat-raised-button
+          style="margin: 20px"
+          color="primary"
+          (click)="onSubmit()"
+        >
+          Submit
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>

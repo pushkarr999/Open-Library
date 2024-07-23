@@ -1,0 +1,18 @@
+<div class="buyModalContainer">
+  <mat-form-field class="textBox small" appearance="outline">
+    <mat-label>Return date</mat-label>
+    <input
+      matInput
+      [matDatepickerFilter]="dateFilter"
+      [matDatepicker]="picker"
+      [(ngModel)]="returnDate"
+    />
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <div class="buyBtn">
+    <button class="greenbtn" (click)="buy()">Buy</button>
+  </div>
+</div>
